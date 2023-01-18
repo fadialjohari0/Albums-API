@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/****************/
+
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 5rem;
+}
+
+#header {
+  font-size: 3.6rem;
+  font-family: "Comfortaa", cursive;
+  padding: 0 0 2rem 0;
+}
+
+#email {
+  width: 30rem;
+  padding: 1rem 0 1rem 10px;
+}
+#password {
+  padding: 1rem 7rem 1rem 10px;
+}
+
+#submit-btn {
+  padding: 1rem 0 1rem 0;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#error {
+  font-size: 2rem;
+  color: rgba(223, 40, 40, 0.829);
+}
+
