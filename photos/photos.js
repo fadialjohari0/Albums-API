@@ -2,7 +2,7 @@ const userObject = JSON.parse(localStorage.getItem("userObject"));
 const clickedAlbumID = localStorage.getItem("albumID");
 const mainSection = document.querySelector(".main-section");
 
-const photosFetch = async function () {
+const photosFetch = async () => {
   try {
     const response = await fetch(
       `https://jsonplaceholder.typicode.com/albums/${clickedAlbumID}/photos
@@ -13,8 +13,8 @@ const photosFetch = async function () {
       );
     });
     const data = await response.json();
-    data.forEach((el) => createElements(el));
-    console.log(data);
+    const elements = data.map((el) => createElements(el));
+    mainSection.append(...elements);
   } catch (err) {
     console.error(err);
   }
@@ -34,7 +34,7 @@ function createElements(el) {
 
   cardContainer.appendChild(photoTitle);
   cardContainer.appendChild(photo);
-  mainSection.appendChild(cardContainer);
+  return cardContainer;
 }
 
 photosFetch(userObject.id);
