@@ -1,4 +1,5 @@
-const userObject = JSON.parse(localStorage.getItem("userObject"));
+const currentUrl = new URL(window.location.href);
+const UserId = new URLSearchParams(currentUrl.search).get("UserId");
 
 const mainSection = document.querySelector(".main-section");
 
@@ -9,7 +10,7 @@ const albumsFetch = async () => {
 
   try {
     const response = await fetch(
-      `https://jsonplaceholder.typicode.com/users/${userObject.id}/albums`
+      `https://jsonplaceholder.typicode.com/users/${UserId}/albums`
     ).catch((error) => {
       throw new Error(
         `An error occured while connecting to the server: ${error.message}`
@@ -34,8 +35,7 @@ function createElements(data) {
   albumTitle.innerHTML = data.title;
 
   albumTitle.addEventListener("click", function () {
-    localStorage.setItem("albumID", data.id);
-    location.href = "../photos/photos.html";
+    window.location.href = "../photos/photos.html?AlbumId=" + data.id;
   });
 
   albumTitleContainer.appendChild(albumTitle);

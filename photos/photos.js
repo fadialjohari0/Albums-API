@@ -1,11 +1,12 @@
-const userObject = JSON.parse(localStorage.getItem("userObject"));
-const clickedAlbumID = localStorage.getItem("albumID");
+const currentUrl = new URL(window.location.href);
+const albumId = new URLSearchParams(currentUrl.search).get("AlbumId");
+
 const mainSection = document.querySelector(".main-section");
 
 const photosFetch = async () => {
   try {
     const response = await fetch(
-      `https://jsonplaceholder.typicode.com/albums/${clickedAlbumID}/photos
+      `https://jsonplaceholder.typicode.com/albums/${albumId}/photos
         `
     ).catch((error) => {
       throw new Error(
@@ -37,4 +38,4 @@ function createElements(el) {
   return cardContainer;
 }
 
-photosFetch(userObject.id);
+photosFetch(albumId);

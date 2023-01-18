@@ -15,8 +15,8 @@ const login = async () => {
     const verifiedEmail = data.find((el) => el.email === emailElement.value);
 
     if (verifiedEmail !== undefined) {
-      localStorage.setItem("userObject", JSON.stringify(verifiedEmail));
-      location.href = "../albums/albums.html";
+      // localStorage.setItem("userObject", JSON.stringify(verifiedEmail));
+      location.href = "../albums/albums.html?UserId=" + verifiedEmail.id;
     } else {
       throw new Error(`Something went wrong! Email is incorrect or not found!`);
     }
