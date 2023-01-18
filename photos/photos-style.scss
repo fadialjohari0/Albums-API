@@ -40,14 +40,14 @@ html {
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid rgba(136, 136, 136, 0.377);
-  .header1 {
+  .page-title {
     font-size: 3.2rem;
     font-family: "Comfortaa", cursive;
     font-weight: 400;
     padding: 6rem 3.5rem 2rem 0;
   }
 
-  .whatsNew {
+  .whats-new {
     font-size: 1.5rem;
     font-weight: 900;
     letter-spacing: 0.5px;
@@ -64,7 +64,7 @@ html {
   padding: 2rem;
 }
 
-.innerDiv {
+.card-container {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -74,7 +74,7 @@ html {
   transition: 0.5s;
 }
 
-.innerDiv:hover {
+.card-container:hover {
   box-shadow: 1px 1px 15px #000;
   bottom: 15px;
 }
@@ -84,7 +84,7 @@ html {
   border-radius: 0 0 10px 10px;
 }
 
-.photoTitle {
+.photo-title {
   text-align: center;
   font-size: 1.4rem;
   font-weight: 500;
@@ -96,7 +96,7 @@ html {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .photoTitle {
+  .photo-title {
     font-size: 1.2rem;
   }
 }

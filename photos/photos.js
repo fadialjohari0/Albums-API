@@ -1,5 +1,4 @@
 const userObject = JSON.parse(localStorage.getItem("userObject"));
-const userID = userObject["id"];
 const clickedAlbumID = localStorage.getItem("albumID");
 const mainSection = document.querySelector(".main-section");
 
@@ -22,20 +21,20 @@ const photosFetch = async function () {
 };
 
 function createElements(el) {
-  const innerDiv = document.createElement("div");
-  innerDiv.classList.add("innerDiv");
+  const cardContainer = document.createElement("div");
+  cardContainer.classList.add("card-container");
 
   const photoTitle = document.createElement("p");
-  photoTitle.classList.add("photoTitle");
+  photoTitle.classList.add("photo-title");
   photoTitle.innerHTML = el.title;
 
   const photo = document.createElement("img");
   photo.classList.add("photo");
   photo.src = el.url;
 
-  innerDiv.appendChild(photoTitle);
-  innerDiv.appendChild(photo);
-  mainSection.appendChild(innerDiv);
+  cardContainer.appendChild(photoTitle);
+  cardContainer.appendChild(photo);
+  mainSection.appendChild(cardContainer);
 }
 
-photosFetch(userID);
+photosFetch(userObject.id);

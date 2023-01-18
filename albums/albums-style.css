@@ -59,20 +59,20 @@ main {
   justify-content: center;
   align-items: center;
 }
-.header-section .header1 {
+.header-section .page-title {
   font-size: 3.2rem;
   font-family: "Comfortaa", cursive;
   font-weight: 400;
   padding: 6rem 3.5rem 2rem 0;
 }
-.header-section .whatsNew {
+.header-section .whats-new {
   font-size: 1.5rem;
   font-weight: 900;
   letter-spacing: 0.5px;
   padding: 2rem 1rem 3rem 0;
 }
 
-.innerDiv {
+.album-title-container {
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -85,12 +85,12 @@ main {
   transition: 0.5s;
 }
 
-.innerDiv:hover {
+.album-title-container:hover {
   bottom: 10px;
   box-shadow: 1px 1px 5px #000;
 }
 
-.albumTitle {
+.album-title {
   width: 100%;
   font-size: 1.6rem;
   padding: 1rem;

@@ -27,10 +27,11 @@ const albumsFetch = async function () {
 };
 
 function createElements(data) {
-  const innerDiv = document.createElement("div");
-  innerDiv.classList.add("innerDiv");
+  const albumTitleContainer = document.createElement("div");
+  albumTitleContainer.classList.add("album-title-container");
+
   const albumTitle = document.createElement("p");
-  albumTitle.classList.add("albumTitle");
+  albumTitle.classList.add("album-title");
   albumTitle.innerHTML = data.title;
 
   albumTitle.addEventListener("click", function () {
@@ -38,8 +39,8 @@ function createElements(data) {
     location.href = "../photos/photos.html";
   });
 
-  innerDiv.appendChild(albumTitle);
-  mainSection.appendChild(innerDiv);
+  albumTitleContainer.appendChild(albumTitle);
+  mainSection.appendChild(albumTitleContainer);
 }
 
 albumsFetch();
